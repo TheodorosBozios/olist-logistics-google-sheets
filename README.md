@@ -20,10 +20,6 @@ The source contains **99,441 orders** from **September 2016 to October 2018**. T
 | Median order-to-delivery cycle | 10.22 days |
 | Average recorded freight charge | 22.82 source currency units |
 
-![Delivery overview](preview/dashboard_overview.png)
-
-![Geographical and distribution comparisons](preview/dashboard_comparisons.png)
-
 ## Findings
 
 - Actual and promised **calendar dates** are compared. Delivery later in the day on the promised date is still classified on time.
@@ -44,24 +40,31 @@ The source contains **99,441 orders** from **September 2016 to October 2018**. T
 
 ## How to use
 
-1. Open `Logistics_Google_Sheets_Analysis.xlsx` in Excel or upload it to Google Drive and open with Google Sheets.
+1. Open `Logistics_Google_Sheets_Analysis.xlsx` (from the full project package) in Excel or upload it to Google Drive and open with Google Sheets.
 2. The `Dashboard` sheet shows the main KPIs and charts.
 3. The `Analysis` sheet holds the formula calculations that the dashboard references.
-4. To rebuild prepared inputs from a revised raw CSV, run `python scripts/prepare_data.py` from the project root, then re-import the two prepared tables into the workbook.
+4. To rebuild prepared inputs from a revised raw CSV, place the unified source under `data/` and run:
 
-See [formula documentation](docs/FORMULAS.md) for the calculation logic. Formula ranges cover 1,671 prepared groups representing all 99,441 orders and all 96,470 individual eligible durations. Regenerate both prepared inputs together when changing the raw source, then review and extend ranges if necessary.
+```bash
+python scripts/prepare_data.py
+```
 
-## Project files
+Then re-import the two prepared tables into the workbook.
+
+See [formula documentation](docs/FORMULAS.md) for the calculation logic. Formula ranges cover 1,671 prepared groups representing all 99,441 orders and all 96,470 individual eligible durations.
+
+## Repository contents
 
 | Path | Contents |
 | --- | --- |
-| `Logistics_Google_Sheets_Analysis.xlsx` | Formula-based workbook with six charts |
-| `data/` | Unified CSV, prepared aggregates, delivery cycles and source metadata |
-| `results/` | Result snapshots in CSV (monthly, state, seller group, status) |
-| `preview/` | Workbook previews for the GitHub README |
+| `results/` | KPI snapshots: monthly, state, seller group, order status |
 | `docs/ANALYSIS.md` | Detailed interpretation and suggested follow-up questions |
 | `docs/FORMULAS.md` | Field formulas, aggregate examples and denominator definitions |
 | `scripts/prepare_data.py` | Standard-library Python preparation of additive source tables |
+| `data/SOURCE.json` | Provenance and snapshot metadata |
+| `data/preparation_validation.json` | Row-count and hash checks from preparation |
+
+**Full package** (Excel workbook, unified CSV, prepared aggregates, delivery-cycle list, chart previews): use the project ZIP you already have. Those large binary and data files are not duplicated in this repository so the clone stays light; the methods, metrics and scripts above are fully documented and reproducible.
 
 ## Interpretation boundaries
 
