@@ -1,0 +1,20 @@
+{
+  "publisher": "Olist",
+  "dataset": "Brazilian E-Commerce Public Dataset by Olist",
+  "source_url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+  "licence": "CC BY-NC-SA 4.0",
+  "retrieved": "2026-10-12",
+  "analysis_created": "2026-10-13",
+  "source_csv_rows": 99441,
+  "source_csv_columns": 14,
+  "source_sha256": "f5ddcdf11a35b0f17baaf0be96fad12bd2649f01b379974f4ab1ab7bd7f9ca00",
+  "first_purchase": "2016-09-04 21:15:19",
+  "last_purchase": "2018-10-17 17:30:18",
+  "unit_of_analysis": "One order",
+  "source_adaptation": "Aggregated item-level rows per order, left-joined customer location; all original orders retained.",
+  "monetary_units": "Original source units; no conversion or inferred carrier expense.",
+  "validation_scope": "Workbook engine calculations and exported files; native Google Sheets import still requires a connected Google Drive service.",
+  "prepared_groups": 1671,
+  "eligible_individual_cycles": 96470,
+  "preparation": "Standard-library Python creates additive input groups and individual cycle values. Spreadsheet formulas calculate the final metrics, weighted means, rates, exact median, distributions and charts."
+}
