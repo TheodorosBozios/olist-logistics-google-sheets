@@ -6,6 +6,15 @@ An analysis of real, anonymised Brazilian e-commerce orders using spreadsheet fo
 
 The source contains **99,441 orders** from **September 2016 to October 2018**. The analysis retains every order and calculates delivery performance on **96,470 eligible delivered orders**.
 
+## Downloads
+
+| Resource | Link |
+| --- | --- |
+| **Workbook (Google Sheets)** | [Open in Google Sheets](https://docs.google.com/spreadsheets/d/1Pj0crR-FzOhKKcOkDciTZz53UhT63a7v/edit?usp=sharing) |
+| **Full project package (ZIP)** | [Download ZIP](https://drive.google.com/file/d/19THu_eoe3DKKdPp9ZtToilMfoh44Alj-/view?usp=sharing) |
+
+The ZIP includes the Excel workbook, unified source CSV, prepared aggregates, delivery-cycle list, chart previews and all scripts/docs.
+
 ## Key results
 
 | Metric | Result |
@@ -40,7 +49,7 @@ The source contains **99,441 orders** from **September 2016 to October 2018**. T
 
 ## How to use
 
-1. Open `Logistics_Google_Sheets_Analysis.xlsx` (from the full project package) in Excel or upload it to Google Drive and open with Google Sheets.
+1. Open the [workbook in Google Sheets](https://docs.google.com/spreadsheets/d/1Pj0crR-FzOhKKcOkDciTZz53UhT63a7v/edit?usp=sharing) (or download the ZIP and open the `.xlsx` in Excel).
 2. The `Dashboard` sheet shows the main KPIs and charts.
 3. The `Analysis` sheet holds the formula calculations that the dashboard references.
 4. To rebuild prepared inputs from a revised raw CSV, place the unified source under `data/` and run:
@@ -64,8 +73,6 @@ See [formula documentation](docs/FORMULAS.md) for the calculation logic. Formula
 | `data/SOURCE.json` | Provenance and snapshot metadata |
 | `data/preparation_validation.json` | Row-count and hash checks from preparation |
 
-**Full package** (Excel workbook, unified CSV, prepared aggregates, delivery-cycle list, chart previews): use the project ZIP you already have. Those large binary and data files are not duplicated in this repository so the clone stays light; the methods, metrics and scripts above are fully documented and reproducible.
-
 ## Interpretation boundaries
 
 - Cancelled and undelivered orders remain in order counts but do not count as on-time outcomes.
@@ -82,4 +89,4 @@ Dataset: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/d
 
 The source and derived data/analysis are distributed under **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**: attribution, non-commercial use and share-alike. Adaptations are described above. Use does not imply publisher endorsement. See [LICENSE.md](LICENSE.md).
 
-This project is intended for non-commercial educational analysis. Native Google Sheets import and verification is a separate step when opening the workbook online.
+This project is intended for non-commercial educational analysis.
